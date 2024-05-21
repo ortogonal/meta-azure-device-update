@@ -154,13 +154,13 @@ do_install:append() {
 
     #create ADUC_CONF_DIR
     install -d ${D}${ADUC_CONF_DIR}
-    chown root:${ADUGROUP} ${D}${ADUC_CONF_DIR}
-    chmod 0774 ${D}${ADUC_CONF_DIR}
+    chown ${ADUUSER}:${ADUGROUP} ${D}${ADUC_CONF_DIR}
+    chmod 0750 ${D}${ADUC_CONF_DIR}
 
     #create ADUC_LOG_DIR
     install -d ${D}${ADUC_LOG_DIR}
     chown ${ADUUSER}:${ADUGROUP} ${D}${ADUC_LOG_DIR}
-    chmod 0774 ${D}${ADUC_LOG_DIR}
+    chmod 0750 ${D}${ADUC_LOG_DIR}
 
     install -m 0550 ${S}/src/adu-shell/scripts/adu-swupdate.sh ${D}${bindir}
     chown ${ADUUSER}:${ADUGROUP} ${D}${bindir}/adu-swupdate.sh
